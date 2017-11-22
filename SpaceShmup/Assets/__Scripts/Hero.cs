@@ -26,7 +26,8 @@ public class Hero : MonoBehaviour
     public WeaponFireDelegate fireDelegate;
 
     //Player lives
-    public int lives = 3;
+    public int lives;
+   // public GameObject ship1, ship2, ship3;
     
     void Awake()
     {
@@ -40,6 +41,12 @@ public class Hero : MonoBehaviour
         // Reset the weapons to start _Hero with 1 blaster
         ClearWeapons();
         weapons[0].SetType(WeaponType.blaster);
+        lives = 3;
+        /*ship1.gameObject.SetActive(true);
+        ship2.gameObject.SetActive(true);
+        ship3.gameObject.SetActive(true);*/
+
+
     }
 
     // Update is called once per frame
@@ -72,7 +79,36 @@ public class Hero : MonoBehaviour
         { // 1
             fireDelegate();
         }
-    }
+
+        if (lives == 3)
+        {
+        /*    switch (lives)
+            {
+                case 3:
+                    ship1.gameObject.SetActive(true);
+                    ship2.gameObject.SetActive(true);
+                    ship3.gameObject.SetActive(true);
+                    break;
+
+                case 2:
+                    ship1.gameObject.SetActive(true);
+                    ship2.gameObject.SetActive(true);
+                    ship3.gameObject.SetActive(false);
+                    break;
+
+                case 1:
+                    ship1.gameObject.SetActive(true);
+                    ship2.gameObject.SetActive(false);
+                    ship3.gameObject.SetActive(false);
+                    break;
+                case 0:
+                    ship1.gameObject.SetActive(false);
+                    ship2.gameObject.SetActive(false);
+                    ship3.gameObject.SetActive(false);
+                    break;
+            }*/
+        }
+        }
     // This variable holds a reference to the last triggering GameObject
     public GameObject lastTriggerGo = null;
 
@@ -170,27 +206,24 @@ public class Hero : MonoBehaviour
             // If the shield is going to be set to less than zero
             if (value < 0)
             {
-                //resets hero ship location back to zero
-                transform.position = Vector3.zero;
+                
 
-                //subtracts a life from player hero 
-                lives -= 1;
+                    //subtracts a life from player hero 
+                         lives -= 1;
 
-                if (lives > 0)
-                {
-                   // Awake();
+                    //resets hero ship location back to zero
+                    transform.position = Vector3.zero;
+
+                    if (lives == 0)
+                    {
+                        //Tell Main.S to restart the game after a delay
+                        Main.S.DelayedRestart(gameRestartDelay);
+                        Destroy(this.gameObject);
+                    }
+
+
                 }
-
-                else if (lives == 0)
-                {
-                    //Tell Main.S to restart the game after a delay
-                    Main.S.DelayedRestart(gameRestartDelay);
-                    Destroy(this.gameObject);
-                }
-
-
             }
         }
     }
 
-}
