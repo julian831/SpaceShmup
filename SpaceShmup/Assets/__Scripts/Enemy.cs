@@ -15,9 +15,11 @@ public class Enemy : MonoBehaviour
     public int remainingDamageFrames = 0; // Damage frames left
     public Bounds bounds; // The Bounds of this and its children
     public Vector3 boundsCenterOffset; // Dist of bounds.center from position
+    public static int enemiesLeft;
 
     void Awake()
     {
+        enemiesLeft = 100;
         materials = Utils.GetAllMaterials(gameObject);
         originalColors = new Color[materials.Length];
         for (int i = 0; i < materials.Length; i++)
@@ -109,6 +111,7 @@ public class Enemy : MonoBehaviour
                 health -= Main.W_DEFS[p.type].damageOnHit;
                 if (health <= 0)
                 {
+                    enemiesLeft = enemiesLeft - 1;
                     // Tell the Main singleton that this ship has been destroyed
                     Main.S.ShipDestroyed(this);
                     // Destroy this Enemy

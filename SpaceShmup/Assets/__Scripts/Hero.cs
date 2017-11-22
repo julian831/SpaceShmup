@@ -27,6 +27,7 @@ public class Hero : MonoBehaviour
 
     //Player lives
     public int lives;
+
    // public GameObject ship1, ship2, ship3;
     
     void Awake()
