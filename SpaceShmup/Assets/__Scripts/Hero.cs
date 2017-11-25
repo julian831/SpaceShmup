@@ -28,7 +28,6 @@ public class Hero : MonoBehaviour
     //Player lives
 <<<<<<< HEAD
     public int lives;
-
    // public GameObject ship1, ship2, ship3;
 =======
     public int lives = 3;
