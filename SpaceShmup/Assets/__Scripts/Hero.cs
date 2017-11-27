@@ -29,16 +29,6 @@ public class Hero : MonoBehaviour
     // Create a WeaponFireDelegate field named fireDelegate.
     public WeaponFireDelegate fireDelegate;
 
-<<<<<<< HEAD
-=======
-    //Player lives
-<<<<<<< HEAD
-    public int lives;
-   // public GameObject ship1, ship2, ship3;
-=======
-    public int lives = 3;
->>>>>>> parent of d328c7c... working on adding lives
->>>>>>> ae4495f59d51ed851956409b3f65a65ce2d8afab
     
     void Awake()
     {
