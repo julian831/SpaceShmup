@@ -11,6 +11,10 @@ public class Hero : MonoBehaviour
     public float rollMult = -45;
     public float pitchMult = 30;
 
+
+    //Player lives
+    public int lives = 3;
+
     // Ship status information
     [SerializeField]
     private float _shieldLevel = 1; // Add the underscore!
@@ -25,8 +29,6 @@ public class Hero : MonoBehaviour
     // Create a WeaponFireDelegate field named fireDelegate.
     public WeaponFireDelegate fireDelegate;
 
-    //Player lives
-    public int lives = 3;
     
     void Awake()
     {
@@ -76,6 +78,7 @@ public class Hero : MonoBehaviour
     // This variable holds a reference to the last triggering GameObject
     public GameObject lastTriggerGo = null;
 
+   
     void OnTriggerEnter(Collider other)
     {
         // Find the tag of other.gameObject or its parent GameObjects
