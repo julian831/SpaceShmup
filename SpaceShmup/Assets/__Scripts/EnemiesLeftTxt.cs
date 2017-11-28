@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class EnemiesLeftTxt : MonoBehaviour {
     public Text enemiesLTxt;
+    public static int enemiesLeft = 100;
     
     // Update is called once per frame
-    void FixedUpdate () {
-        enemiesLTxt.text = "Enemies Left = " + Enemy.enemiesLeft;
+    void Update () {
+        enemiesLTxt.text = "Enemies Left = " + enemiesLeft;
     }
 }
