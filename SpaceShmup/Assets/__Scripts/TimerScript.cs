@@ -8,24 +8,19 @@ public class TimerScript : MonoBehaviour {
     public int startTime;
     public Text clockText;
     private int timeCount;
-    static public bool timeStop { get; set; }
+    static public bool TimeStop { get; set; }
 
     // Use this for initialization
     void Start()
     {
         startTime = 0;
-        timeStop = true;
-    }
-
-    void Awake()
-    {
-        timeStop = false;
+        TimeStop = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (timeStop == false)
+        if (TimeStop == false)
         {
             timeCount = startTime + (int)Time.time;
             //if (timeCount <= 0 || TimesUp == true)
