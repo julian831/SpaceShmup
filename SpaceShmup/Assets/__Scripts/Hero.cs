@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Hero : MonoBehaviour
@@ -10,7 +11,8 @@ public class Hero : MonoBehaviour
     public float speed = 30;
     public float rollMult = -45;
     public float pitchMult = 30;
-
+    public Text gameOverText;
+    public GameObject gameOverPanel; 
 
     //Player lives
     public int lives = 3;
@@ -34,6 +36,7 @@ public class Hero : MonoBehaviour
     {
        S = this;
        bounds = Utils.CombineBoundsOfChildren(this.gameObject);
+        gameOverPanel.SetActive(false);
    }
 
     // Use this for initialization
@@ -161,7 +164,13 @@ public class Hero : MonoBehaviour
             w.SetType(WeaponType.none);
         }
     }
-    public float shieldLevel
+
+    void DisableText()
+    {
+        gameOverText.enabled = false;
+    }
+
+public float shieldLevel
     {
         get
         {
@@ -187,8 +196,13 @@ public class Hero : MonoBehaviour
                 else if (lives == 0)
                 {
                     //Tell Main.S to restart the game after a delay
-                    Main.S.DelayedRestart(gameRestartDelay);
+                   
+                   
                     Destroy(this.gameObject);
+                    gameOverPanel.SetActive(true);
+                    gameOverText.text = "GAME OVER";
+                    Main.S.DelayedRestart(gameRestartDelay);
+
                 }
 
 
