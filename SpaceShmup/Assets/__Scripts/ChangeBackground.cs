@@ -7,7 +7,7 @@ public class ChangeBackground : MonoBehaviour {
 
     public GameObject[] items;
     public Text levelTxt;
-    public int count = 0;
+    public int count;
 
     void Start()
     {
@@ -22,7 +22,7 @@ public class ChangeBackground : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (EnemiesLeftTxt.enemiesLeft < 95 && count == 0)
+        if (EnemiesLeftTxt.enemiesLeft < 97 && count == 0)
         {
             items[0].SetActive(false);
             items[1].SetActive(false);
@@ -33,7 +33,7 @@ public class ChangeBackground : MonoBehaviour {
             Invoke("DisableText", 2f);
             count++;
         }
-        if (EnemiesLeftTxt.enemiesLeft < 90 && count == 1)
+        if (EnemiesLeftTxt.enemiesLeft < 93 && count == 1)
         {
             items[0].SetActive(false);
             items[1].SetActive(false);
