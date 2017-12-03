@@ -24,7 +24,6 @@ WeaponType.shield };
 
     void Awake()
     {
-
         S = this;
         //Set Utils.cambounds
         Utils.SetCameraBounds(this.GetComponent<Camera>());
