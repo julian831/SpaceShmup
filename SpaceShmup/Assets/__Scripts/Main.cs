@@ -93,22 +93,6 @@ WeaponType.shield };
         count = 0;
     }
 
-    //void Update()
-    //{
-
-    //    if (ChangeBackground.count == 1 && count == 0)
-    //    {
-    //        enemySpawnPerSecond = 0.2f;
-    //        count++;
-    //    }
-
-    //    if (ChangeBackground.count == 2 && count ==1)
-    //    {
-    //        enemySpawnPerSecond = 0.8f;
-    //        count++;
-    //    }
-    //}
-
     public void SpawnEnemy()
     {
         //pick a random enemy prefab to instantiate

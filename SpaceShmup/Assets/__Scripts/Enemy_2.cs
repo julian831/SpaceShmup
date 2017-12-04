@@ -19,12 +19,12 @@ public class Enemy_2 : Enemy
 
         if (ChangeBackground.count == 1)
         {
-            health = 5;
+            health = 10;
         }
 
         if (ChangeBackground.count == 2)
         {
-            health = 10;
+            health = 20;
         }
 
         // Initialize the points

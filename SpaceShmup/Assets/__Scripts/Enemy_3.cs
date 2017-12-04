@@ -18,12 +18,12 @@ public class Enemy_3 : Enemy
 
         if (ChangeBackground.count == 1)
         {
-            health = 5;
+            health = 10;
         }
 
         if (ChangeBackground.count == 2)
         {
-            health = 10;
+            health = 20;
         }
 
         points = new Vector3[3]; // Initialize points

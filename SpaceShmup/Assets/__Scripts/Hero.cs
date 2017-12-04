@@ -15,6 +15,8 @@ public class Hero : MonoBehaviour
     public GameObject mainBtn;
     public GameObject newGameBtn;
 
+   public AudioSource playerDieSound;
+
 
     //Player lives
     public int lives = 3;
@@ -186,6 +188,7 @@ public class Hero : MonoBehaviour
 
                 //subtracts a life from player hero 
                 lives -= 1;
+                playerDieSound.Play();
 
                 if (lives > 0)
                 {

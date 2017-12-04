@@ -21,12 +21,12 @@ public class Enemy_1 : Enemy
 
         if (ChangeBackground.count == 1)
         {
-            health = 5;
+            health = 10;
         }
 
         if (ChangeBackground.count == 2)
         {
-            health = 10;
+            health = 20;
         }
 
 
