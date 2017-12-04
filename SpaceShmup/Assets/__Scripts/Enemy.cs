@@ -109,7 +109,7 @@ public class Enemy : MonoBehaviour
                 health -= Main.W_DEFS[p.type].damageOnHit;
                 if (health <= 0)
                 {
-                    EnemiesLeftTxt.enemiesLeft--;
+                    EnemiesLeftTxt.enemiesLeft++;
                     // Tell the Main singleton that this ship has been destroyed
                     Main.S.ShipDestroyed(this);
                     // Destroy this Enemy
