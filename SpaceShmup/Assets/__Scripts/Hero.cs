@@ -12,6 +12,9 @@ public class Hero : MonoBehaviour
     public float rollMult = -45;
     public float pitchMult = 30;
 
+    public GameObject mainBtn;
+    public GameObject newGameBtn;
+
 
     //Player lives
     public int lives = 3;
@@ -197,6 +200,11 @@ public class Hero : MonoBehaviour
                     gameOverText.text = "GAME OVER";
                     //Tell Main.S to restart the game after a delay
                     Main.S.DelayedRestart(gameRestartDelay);
+
+
+                    mainBtn.SetActive(true);
+                    newGameBtn.SetActive(true);
+                    Time.timeScale = 0;
                 }
 
 
