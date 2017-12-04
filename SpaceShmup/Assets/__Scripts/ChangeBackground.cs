@@ -22,7 +22,7 @@ public class ChangeBackground : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (EnemiesLeftTxt.enemiesLeft < 97 && count == 0)
+        if (Timer.secondsPassed == 10 && Timer.minutesPassed ==0 && count == 0)
         {
             items[0].SetActive(false);
             items[1].SetActive(false);
@@ -33,7 +33,7 @@ public class ChangeBackground : MonoBehaviour {
             Invoke("DisableText", 2f);
             count++;
         }
-        if (EnemiesLeftTxt.enemiesLeft < 93 && count == 1)
+        if (Timer.secondsPassed == 20 && Timer.minutesPassed == 0 && count == 1)
         {
             items[0].SetActive(false);
             items[1].SetActive(false);
