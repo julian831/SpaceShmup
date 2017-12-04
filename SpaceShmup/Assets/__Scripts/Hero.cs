@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Hero : MonoBehaviour
@@ -29,11 +30,14 @@ public class Hero : MonoBehaviour
     // Create a WeaponFireDelegate field named fireDelegate.
     public WeaponFireDelegate fireDelegate;
 
+    public GameObject gameOverPanel;
+    public Text gameOverText;
     
     void Awake()
     {
        S = this;
        bounds = Utils.CombineBoundsOfChildren(this.gameObject);
+        gameOverPanel.SetActive(false);
    }
 
     // Use this for initialization
@@ -174,6 +178,7 @@ public class Hero : MonoBehaviour
             if (value < 0)
             {
                 //resets hero ship location back to zero
+          
                 transform.position = Vector3.zero;
 
                 //subtracts a life from player hero 
@@ -186,9 +191,12 @@ public class Hero : MonoBehaviour
 
                 else if (lives == 0)
                 {
+                    
+                    Destroy(this.gameObject);
+                    gameOverPanel.SetActive(true);
+                    gameOverText.text = "GAME OVER";
                     //Tell Main.S to restart the game after a delay
                     Main.S.DelayedRestart(gameRestartDelay);
-                    Destroy(this.gameObject);
                 }
 
 
