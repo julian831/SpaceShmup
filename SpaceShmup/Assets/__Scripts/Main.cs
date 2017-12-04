@@ -21,6 +21,7 @@ WeaponType.shield };
     public bool _______________;
     public WeaponType[] activeWeaponTypes;
     public float enemySpawnRate;
+    int count;
 
     void Awake()
     {
@@ -89,8 +90,24 @@ WeaponType.shield };
         {
             activeWeaponTypes[i] = weaponDefinitions[i].type;
         }
-
+        count = 0;
     }
+
+    //void Update()
+    //{
+
+    //    if (ChangeBackground.count == 1 && count == 0)
+    //    {
+    //        enemySpawnPerSecond = 0.2f;
+    //        count++;
+    //    }
+
+    //    if (ChangeBackground.count == 2 && count ==1)
+    //    {
+    //        enemySpawnPerSecond = 0.8f;
+    //        count++;
+    //    }
+    //}
 
     public void SpawnEnemy()
     {

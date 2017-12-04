@@ -11,6 +11,21 @@ public class Enemy_3 : Enemy
     // Again, Start works well because it is not used by Enemy
     void Start()
     {
+        if (ChangeBackground.count == 0)
+        {
+            health = 1;
+        }
+
+        if (ChangeBackground.count == 1)
+        {
+            health = 5;
+        }
+
+        if (ChangeBackground.count == 2)
+        {
+            health = 10;
+        }
+
         points = new Vector3[3]; // Initialize points
                                  // The start position has already been set by Main.SpawnEnemy()
         points[0] = pos;
@@ -31,6 +46,8 @@ public class Enemy_3 : Enemy
         // Set the birthTime to the current time
         birthTime = Time.time;
     }
+
+
     public override void Move()
     {
         // Bezier curves work based on a u value between 0 & 1

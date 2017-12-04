@@ -11,6 +11,22 @@ public class Enemy_2 : Enemy
     public float sinEccentricity = 0.6f;
     void Start()
     {
+
+        if (ChangeBackground.count == 0)
+        {
+            health = 1;
+        }
+
+        if (ChangeBackground.count == 1)
+        {
+            health = 5;
+        }
+
+        if (ChangeBackground.count == 2)
+        {
+            health = 10;
+        }
+
         // Initialize the points
         points = new Vector3[2];
         // Find Utils.camBounds
@@ -37,6 +53,8 @@ public class Enemy_2 : Enemy
         // Set the birthTime to the current time
         birthTime = Time.time;
     }
+
+
     public override void Move()
     {
         // Bézier curves work based on a u value between 0 & 1

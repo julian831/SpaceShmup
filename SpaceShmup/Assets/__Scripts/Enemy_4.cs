@@ -28,6 +28,21 @@ public class Enemy_4 : Enemy
 
     void Start()
     {
+        if (ChangeBackground.count == 0)
+        {
+            health = 1;
+        }
+
+        if (ChangeBackground.count == 1)
+        {
+            health = 5;
+        }
+
+        if (ChangeBackground.count == 2)
+        {
+            health = 10;
+        }
+
         points = new Vector3[2];
         // There is already an initial position chosen by Main.SpawnEnemy()
         // so add it to points as the initial p0 & p1
@@ -146,6 +161,7 @@ public class Enemy_4 : Enemy
                 if (allDestroyed)
                 { // If it IS completely destroyed
                   // Tell the Main singleton that this ship has been destroyed
+                    EnemiesLeftTxt.enemiesLeft++;
                     Main.S.ShipDestroyed(this);
                     // Destroy this Enemy
                     Destroy(this.gameObject);

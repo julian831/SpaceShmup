@@ -14,6 +14,22 @@ public class Enemy_1 : Enemy
     private float birthTime;
     void Start()
     {
+        if (ChangeBackground.count == 0)
+        {
+            health = 1;
+        }
+
+        if (ChangeBackground.count == 1)
+        {
+            health = 5;
+        }
+
+        if (ChangeBackground.count == 2)
+        {
+            health = 10;
+        }
+
+
         // Set x0 to the initial x position of Enemy_1
         // This works fine because the position will have already
         // been set by Main.SpawnEnemy() before Start() runs
@@ -23,6 +39,8 @@ public class Enemy_1 : Enemy
         x0 = pos.x;
         birthTime = Time.time;
     }
+
+
     // Override the Move function on Enemy
     public override void Move()
     { // 2
