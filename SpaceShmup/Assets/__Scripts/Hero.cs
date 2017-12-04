@@ -11,7 +11,8 @@ public class Hero : MonoBehaviour
     public float speed = 30;
     public float rollMult = -45;
     public float pitchMult = 30;
-
+    public Text gameOverText;
+    public GameObject gameOverPanel; 
 
     //Player lives
     public int lives = 3;
@@ -165,7 +166,13 @@ public class Hero : MonoBehaviour
             w.SetType(WeaponType.none);
         }
     }
-    public float shieldLevel
+
+    void DisableText()
+    {
+        gameOverText.enabled = false;
+    }
+
+public float shieldLevel
     {
         get
         {
@@ -196,7 +203,17 @@ public class Hero : MonoBehaviour
                     gameOverPanel.SetActive(true);
                     gameOverText.text = "GAME OVER";
                     //Tell Main.S to restart the game after a delay
+<<<<<<< HEAD
                     Main.S.DelayedRestart(gameRestartDelay);
+=======
+                   
+                   
+                    Destroy(this.gameObject);
+                    gameOverPanel.SetActive(true);
+                    gameOverText.text = "GAME OVER";
+                    Main.S.DelayedRestart(gameRestartDelay);
+
+>>>>>>> b701d910d587c70609a2dce32a632cdd53060868
                 }
 
 
